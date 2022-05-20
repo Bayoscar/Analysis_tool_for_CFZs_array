@@ -152,7 +152,7 @@ function getIndex(input,output){
 	list_by = Array.slice(list_b, list_b.length/2);
 	
 	// Set the position error and match two lists of circles  
-	positionError = 5;
+	positionError = res[2];
 	indexList = matchIndex(list_ax, list_ay, list_bx, list_by, positionError);
 	roiManager("reset");
 	return indexList;
@@ -173,7 +173,7 @@ function circleSize(){
 	cirSize = PI * r * r;
 	minSize = cirSize * 0.5;
 	maxSize = cirSize * 1.5; 
-	res = newArray(minSize, maxSize);
+	res = newArray(minSize, maxSize,r);
 	return  res;
 }
 
