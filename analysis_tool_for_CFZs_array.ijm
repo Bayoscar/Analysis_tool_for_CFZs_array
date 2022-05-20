@@ -136,7 +136,7 @@ function getIndex(input,output){
 	roiManager("Reset");
 	
 	// Find circles in 10%(red) zone and return the coordinates
-	list_b = findCFZ();
+	list_b = findCFZ(res[0],res[1]);
 	
 	// Clean up the interface
 	close("Results");
@@ -193,7 +193,7 @@ function findCircle(minSize,maxSize){
 	return circlePosition;
 }
 
-function findCFZ(){
+function findCFZ(minSize,maxSize){
 	selectWindow("copy (green)");
 	run("Gaussian Blur...", "sigma=0.5");
 	//setOption("BlackBackground",false);
@@ -201,7 +201,7 @@ function findCFZ(){
 	//run("Threshold...");
 	//setThreshold(82, 255);
 	run("Convert to Mask");
-	run("Analyze Particles...", "size=0-500 pixel circularity=0.9-1.00 display exclude add");
+	run("Analyze Particles...", "size=" + minSize + "-" + maxSize + " pixel circularity=0.9-1.00 display exclude add");
 	roiManager("Save", outDir + "circles_in_red.zip");
 	selectWindow("copy (green)");
 	//roiManager("show all with labels");
