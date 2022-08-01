@@ -2,11 +2,15 @@
 Dialog.create("Locate the input files");
 	Dialog.addFile("Scanned image:", "")
 	Dialog.addFile("Simulation result:", "")
+	Dialog.addSlider("Variance filter radius:", 1, 20, 3);
+	Dialog.addSlider("Top Hat radius:", 1, 20, 6);
 Dialog.show();
 
 // Pick up user input
 ScanImg = Dialog.getString();
 SimuRes = Dialog.getString();
+varianceRadius = Dialog.getNumber();
+topHatRadius = Dialog.getNumber();
 
 // Create a new file for saving cropped images
 imgFolder = File.getDirectory(ScanImg);
@@ -299,8 +303,8 @@ function imgprocess(input,file){
 	run("Set Measurements...", "area redirect=None decimal=3");
 	run("Duplicate...", " ");
 	run("Enhance Contrast...", "saturated=0.35");
-	run("Variance...", "radius=2");
-	run("Top Hat...", "radius=4 light don't");
+	run("Variance...", "radius=" + varianceRadius);
+	run("Top Hat...", "radius=" + topHatRadius + " light don't");
 	run("8-bit");
 	setAutoThreshold("Otsu");
 	//run("Threshold...");
