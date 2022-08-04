@@ -6,4 +6,4 @@ To install the tools, save the file Analysis_tool_for_CFZs_array.ijm under plugi
 
 The procedure is simple. You only need to input the scanned image and simulation result, and the tool can automatically analyze and output the screened cell-free area results.
 
-There are two custom parameters, variance filter radius and tophat radius, needs to be set before processing images. To determine these two paramters, a tuning process is necessary. The user-friendly tool "ID3_parameter_tuning.ijm" is to coded to assist the tuning process. You can directly use it after installation.
+There are two custom parameters(variance filter radius and tophat radius), which are required to input before processing images. To determine these two paramters, a tuning process is necessary. The user-friendly tool "ID3_parameter_tuning.ijm" is to coded to assist the tuning process. You can directly use it on a sample image after installation.
