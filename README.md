@@ -9,4 +9,8 @@ Rapid grid partitioning of microarray images is achieved by precompiling the arr
 To install the tools, save the file Analysis_tool_for_CFZs_array.ijm under plugins\Scripts\Plugins in your Fiji installation. And you can find the tool in the Plugins menu in Fiji.
 ### 2. Automatic gridding
 Automatic gridding is realized through shock filter and mathematical morphology algorithms, which runs on MATLAB, and the main program is located in the PDE folder.
-MATLAB R2016 or higher version is required. Part of the functions of ImageJ are also invoked during program operation, so it is necessary to install imageJ and the cross-platform protocol file MIJI.
+MATLAB R2016 or higher version is required. Part of the functions of ImageJ are also invoked during program operation, so it is necessary to install imageJ and the cross-platform protocol file MIJI. 
+To install MIJI, please refer to:
+https://imagej.net/plugins/miji
+https://jp.mathworks.com/matlabcentral/fileexchange/47545-mij-running-imagej-and-fiji-within-matlab
+
